@@ -7,10 +7,24 @@ import RealityKitContent
 struct ContentView: View {
     var body: some View {
         VStack {
-            Model3D(named: "Scene", bundle: realityKitContentBundle)
-                .padding(.bottom, 50)
+            Text("NihongoQuest")
+                .font(.largeTitle)
+                .italic()
+            HStack {
+                Button {
+                    // Do something
+                } label: {
+                    Text("Start")
+                }
 
-            Text("Hello, world!")
+                Button {
+                    // Do something
+                } label: {
+                    Text("Learn More")
+                }
+            }
+            .padding()
+
         }
         .padding()
     }
