@@ -13,6 +13,12 @@
 		7C38CC3D2C4A2D9200A8C362 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C38CC3C2C4A2D9200A8C362 /* Assets.xcassets */; };
 		7C38CC402C4A2D9200A8C362 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C38CC3F2C4A2D9200A8C362 /* Preview Assets.xcassets */; };
 		7C38CC4B2C4A2D9200A8C362 /* NihongoQuestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C38CC4A2C4A2D9200A8C362 /* NihongoQuestTests.swift */; };
+		7CE8BDEE2C4B4CC0000DC1D7 /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = 7CE8BDED2C4B4CC0000DC1D7 /* RealityKitContent */; };
+		7CE8BDF12C4B4D5F000DC1D7 /* AssistantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE8BDF02C4B4D5F000DC1D7 /* AssistantView.swift */; };
+		7CE8BDF32C4B4F75000DC1D7 /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = 7CE8BDF22C4B4F75000DC1D7 /* RealityKitContent */; };
+		7CE8BDF62C4B4FF7000DC1D7 /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = 7CE8BDF52C4B4FF7000DC1D7 /* RealityKitContent */; };
+		7CE8BDF92C4B5070000DC1D7 /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = 7CE8BDF82C4B5070000DC1D7 /* RealityKitContent */; };
+		7CE8BDFC2C4B5114000DC1D7 /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = 7CE8BDFB2C4B5114000DC1D7 /* RealityKitContent */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,7 +33,6 @@
 
 /* Begin PBXFileReference section */
 		7C38CC312C4A2D9100A8C362 /* NihongoQuest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NihongoQuest.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		7C38CC352C4A2D9100A8C362 /* RealityKitContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RealityKitContent; sourceTree = "<group>"; };
 		7C38CC382C4A2D9100A8C362 /* NihongoQuestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NihongoQuestApp.swift; sourceTree = "<group>"; };
 		7C38CC3A2C4A2D9100A8C362 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7C38CC3C2C4A2D9200A8C362 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -35,6 +40,7 @@
 		7C38CC412C4A2D9200A8C362 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7C38CC462C4A2D9200A8C362 /* NihongoQuestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NihongoQuestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C38CC4A2C4A2D9200A8C362 /* NihongoQuestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NihongoQuestTests.swift; sourceTree = "<group>"; };
+		7CE8BDF02C4B4D5F000DC1D7 /* AssistantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +48,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CE8BDEE2C4B4CC0000DC1D7 /* RealityKitContent in Frameworks */,
+				7CE8BDF32C4B4F75000DC1D7 /* RealityKitContent in Frameworks */,
+				7CE8BDF92C4B5070000DC1D7 /* RealityKitContent in Frameworks */,
+				7CE8BDF62C4B4FF7000DC1D7 /* RealityKitContent in Frameworks */,
+				7CE8BDFC2C4B5114000DC1D7 /* RealityKitContent in Frameworks */,
 				7C38CC372C4A2D9100A8C362 /* RealityKitContent in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -83,6 +94,7 @@
 				7C38CC3C2C4A2D9200A8C362 /* Assets.xcassets */,
 				7C38CC412C4A2D9200A8C362 /* Info.plist */,
 				7C38CC3E2C4A2D9200A8C362 /* Preview Content */,
+				7CE8BDF02C4B4D5F000DC1D7 /* AssistantView.swift */,
 			);
 			path = NihongoQuest;
 			sourceTree = "<group>";
@@ -90,7 +102,6 @@
 		7C38CC342C4A2D9100A8C362 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				7C38CC352C4A2D9100A8C362 /* RealityKitContent */,
 			);
 			path = Packages;
 			sourceTree = "<group>";
@@ -129,6 +140,11 @@
 			name = NihongoQuest;
 			packageProductDependencies = (
 				7C38CC362C4A2D9100A8C362 /* RealityKitContent */,
+				7CE8BDED2C4B4CC0000DC1D7 /* RealityKitContent */,
+				7CE8BDF22C4B4F75000DC1D7 /* RealityKitContent */,
+				7CE8BDF52C4B4FF7000DC1D7 /* RealityKitContent */,
+				7CE8BDF82C4B5070000DC1D7 /* RealityKitContent */,
+				7CE8BDFB2C4B5114000DC1D7 /* RealityKitContent */,
 			);
 			productName = NihongoQuest;
 			productReference = 7C38CC312C4A2D9100A8C362 /* NihongoQuest.app */;
@@ -180,6 +196,9 @@
 				Base,
 			);
 			mainGroup = 7C38CC282C4A2D9100A8C362;
+			packageReferences = (
+				7CE8BDFA2C4B5114000DC1D7 /* XCLocalSwiftPackageReference "../../../GenerativeDoodleArt_VisionOS-main/Packages/RealityKitContent" */,
+			);
 			productRefGroup = 7C38CC322C4A2D9100A8C362 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -215,6 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C38CC3B2C4A2D9100A8C362 /* ContentView.swift in Sources */,
+				7CE8BDF12C4B4D5F000DC1D7 /* AssistantView.swift in Sources */,
 				7C38CC392C4A2D9100A8C362 /* NihongoQuestApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -481,8 +501,35 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		7CE8BDFA2C4B5114000DC1D7 /* XCLocalSwiftPackageReference "../../../GenerativeDoodleArt_VisionOS-main/Packages/RealityKitContent" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../../../GenerativeDoodleArt_VisionOS-main/Packages/RealityKitContent";
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		7C38CC362C4A2D9100A8C362 /* RealityKitContent */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RealityKitContent;
+		};
+		7CE8BDED2C4B4CC0000DC1D7 /* RealityKitContent */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RealityKitContent;
+		};
+		7CE8BDF22C4B4F75000DC1D7 /* RealityKitContent */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RealityKitContent;
+		};
+		7CE8BDF52C4B4FF7000DC1D7 /* RealityKitContent */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RealityKitContent;
+		};
+		7CE8BDF82C4B5070000DC1D7 /* RealityKitContent */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RealityKitContent;
+		};
+		7CE8BDFB2C4B5114000DC1D7 /* RealityKitContent */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = RealityKitContent;
 		};
