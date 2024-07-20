@@ -9,20 +9,42 @@ struct AssistantView: View {
         let headAnchor = AnchorEntity(.head)
         headAnchor.position = [0.70, -0.35, -1]
         let radians = -30 * Float.pi / 180 // converting -30 degrees to rads here
-        rotateEnityAboutY(entity: headAnchor, angle: radians)
+        AssistantView.rotateEnityAboutY(entity: headAnchor, angle: radians)
         return headAnchor
 
     }()
 
+    @State var showTextField = true
+
     var body: some View {
-        RealityView { content in
+        RealityView { content, attachments  in
 
             do {
                 let immersiveEntity = try await Entity(named: "Immersive", in: realityKitContentBundle)
                 characterEntity.addChild(immersiveEntity)
                 content.add(characterEntity)
+
+
+                guard let attachmentEntity = attachments.entity(for: "helperText") else { return }
+                attachmentEntity.position = SIMD3<Float>(0,0.62,0)
+                let radians = 30 * Float.pi / 180
+                AssistantView.rotateEnityAboutY(entity: attachmentEntity, angle: radians)
+                characterEntity.addChild(attachmentEntity)
+
             } catch {
                 print("Entity load error \(error)")
+            }
+        } attachments: {
+            Attachment(id: "helperText") {
+                VStack {
+                    Text("meow")
+                        .frame(maxWidth: 600, alignment: .leading)
+                        .font(.extraLargeTitle2)
+                        .fontWeight(.regular)
+                        .padding(40)
+                        .glassBackgroundEffect()
+                }
+                .opacity(showTextField ? 1 : 0)
             }
         }
     }
