@@ -5,6 +5,9 @@ import RealityKit
 import RealityKitContent
 
 struct AssistantView: View {
+    @State private var assistant: Entity? = nil
+
+    
     @State var characterEntity: Entity = {
         let headAnchor = AnchorEntity(.head)
         headAnchor.position = [0.55, -0.35, -1]
@@ -15,6 +18,10 @@ struct AssistantView: View {
     }()
 
     @State var showTextField = false
+    @State private var chatText = "Tap me to start!"
+    @State private var assistant: Entity? = nil
+
+
 
     var body: some View {
         RealityView { content, attachments  in
@@ -37,42 +44,64 @@ struct AssistantView: View {
         } attachments: {
             Attachment(id: "helperText") {
                 VStack {
-                    Text("meow")
+                    Text(chatText)
                         .frame(maxWidth: 600, alignment: .leading)
                         .font(.extraLargeTitle2)
                         .fontWeight(.regular)
                         .padding(40)
                         .glassBackgroundEffect()
                 }
-                .opacity(showTextField ? 1 : 0)
+                //                .opacity(showTextField ? 1 : 0)
             }
         }
-        .onAppear {
-            if !showTextField{
+        .onTapGesture {
+            assistantModel.assistantState = .speaking
+        }
+        .onChange(of: assistantModel.assistantState) { _, newValue in
+            switch newValue {
+            case .idle:
+                break
+            case .speaking:
                 playIntro()
+            @unknown default:
+                break
             }
         }
     }
 
-    func playIntro() {
-        Task {
-                withAnimation(.easeInOut(duration: 0.5)) {
-                    showTextField.toggle()
-                }
+        func animatePromptText(text: String) async {
+            // Type out the title.
+            chatText = ""
+            let words = text.split(separator: " ")
+            for word in words {
+                chatText.append(word + " ")
+                let milliseconds = (1 + UInt64.random(in: 0 ... 1)) * 100
+                try? await Task.sleep(for: .milliseconds(milliseconds))
+            }
+        }
+
+        func playIntro() {
+            Task {
+                let texts = [
+                    "Hey welcome to NihongoQuest!\nMy name is Yaobten nice to meet you!"
+                ]
+
+
+                await animatePromptText(text: texts[0])
+            }
+        }
+
+        static func rotateEnityAboutY(entity: Entity, angle: Float) {
+            var currentTransform = entity.transform
+
+            let rotation = simd_quatf(angle: angle, axis: [0,1,0])
+
+            currentTransform.rotation =  rotation * currentTransform.rotation
+
+            entity.transform = currentTransform
         }
     }
 
-    static func rotateEnityAboutY(entity: Entity, angle: Float) {
-        var currentTransform = entity.transform
-
-        let rotation = simd_quatf(angle: angle, axis: [0,1,0])
-
-        currentTransform.rotation =  rotation * currentTransform.rotation
-
-        entity.transform = currentTransform
+    #Preview {
+        AssistantView()
     }
-}
-
-#Preview {
-    AssistantView()
-}
