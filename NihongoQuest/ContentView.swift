@@ -5,6 +5,9 @@ import RealityKit
 import RealityKitContent
 
 struct ContentView: View {
+
+    @Environment(\.openImmersiveSpace) var openImmersiveSpace
+    @Environment(\.dismissImmersiveSpace) var closeImmersiveSpace
     var body: some View {
         VStack {
             Text("NihongoQuest")
@@ -12,13 +15,17 @@ struct ContentView: View {
                 .italic()
             HStack {
                 Button {
-                    // Do something
+                    Task {
+                        await openImmersiveSpace(id: "chatView")
+                    }
                 } label: {
                     Text("Start")
                 }
 
                 Button {
-                    // Do something
+                    Task {
+                         await closeImmersiveSpace()
+                    }
                 } label: {
                     Text("Learn More")
                 }

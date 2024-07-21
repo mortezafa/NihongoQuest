@@ -8,5 +8,8 @@ struct NihongoQuestApp: App {
         WindowGroup {
             ContentView()
         }
+        ImmersiveSpace(id: "chatView") {
+            AssistantView()
+        }
     }
 }

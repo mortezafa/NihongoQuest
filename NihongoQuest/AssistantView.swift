@@ -7,14 +7,14 @@ import RealityKitContent
 struct AssistantView: View {
     @State var characterEntity: Entity = {
         let headAnchor = AnchorEntity(.head)
-        headAnchor.position = [0.70, -0.35, -1]
+        headAnchor.position = [0.55, -0.35, -1]
         let radians = -30 * Float.pi / 180 // converting -30 degrees to rads here
         AssistantView.rotateEnityAboutY(entity: headAnchor, angle: radians)
         return headAnchor
 
     }()
 
-    @State var showTextField = true
+    @State var showTextField = false
 
     var body: some View {
         RealityView { content, attachments  in
@@ -46,6 +46,19 @@ struct AssistantView: View {
                 }
                 .opacity(showTextField ? 1 : 0)
             }
+        }
+        .onAppear {
+            if !showTextField{
+                playIntro()
+            }
+        }
+    }
+
+    func playIntro() {
+        Task {
+                withAnimation(.easeInOut(duration: 0.5)) {
+                    showTextField.toggle()
+                }
         }
     }
 
